@@ -500,7 +500,7 @@ header.main-header{
 header.main-header .header-sticky{
 	position: relative;
 	top: 0;
-	background: #2d5986;
+	background: #00005a;
 	backdrop-filter: blur(30px) saturate(100%);
 	-webkit-backdrop-filter: blur(30px) saturate(100%);
 	z-index: 100;
@@ -517,7 +517,7 @@ header.main-header .header-sticky.active{
 	left: 0;
 	right: 0;
     transform: translateY(0);
-	background: #2d5986;
+	background: navy;
 }
 
 .navbar{
@@ -763,7 +763,7 @@ header.main-header .header-sticky.active{
 .hero{
 	position: relative;
 	background-image: url('../images/hero-bg-image.png');
-	padding: 265px 0 300px;
+	padding: 345px 0 200px;
 }
 
 .hero::before{
@@ -3269,6 +3269,7 @@ header.main-header .header-sticky.active{
 
 .page-header-box ol .breadcrumb-item+.breadcrumb-item::before{
     color: var(--white-color);
+	
 }
 
 .our-approach{
