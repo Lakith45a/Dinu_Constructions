@@ -1760,7 +1760,7 @@ header.main-header .header-sticky.active{
 
 .our-story{
 	position: relative;
-	background-image: url('../images/our-story-bg-image.jpg');
+	background-image: url('../images/our-story-bg-image.png');
 	padding: 200px 0;
 }
 
@@ -2381,7 +2381,7 @@ header.main-header .header-sticky.active{
 
 .cta-box{
 	position: relative;
-	background-image: url('../images/cta-box-bg-img.jpg');
+	background-image: url('../images/cta-box-bg-img.png');
 	padding: 150px 0;
 	overflow: hidden;
 }
