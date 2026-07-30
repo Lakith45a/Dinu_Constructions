@@ -889,6 +889,7 @@ header.main-header .header-sticky.active{
 .hero-info-list{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: flex-end;
 	gap: 30px;
 }
 
@@ -966,7 +967,7 @@ header.main-header .header-sticky.active{
 }
 
 .hero-info-item.box-3{
-	background: var(--primary-color);
+	background: #516070;
 	padding: 40px;
 }
 
