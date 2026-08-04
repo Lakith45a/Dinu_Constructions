@@ -2982,8 +2982,8 @@ header.main-header .header-sticky.active{
 .footer-links-box{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px 30px;
+    justify-content: flex-start;
+    gap: 40px 170px;
 }
 
 .footer-links h3{
@@ -3002,11 +3002,11 @@ header.main-header .header-sticky.active{
 }
 
 .footer-location-info{
-    max-width: calc(26% - 20px);
+    max-width: 260px;
 }
 
 .footer-contact-links{
-    max-width: calc(34% - 20px);
+    max-width: 420px;
 }
 
 .footer-contact-links ul{
