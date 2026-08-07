@@ -10,22 +10,61 @@
 	});
 
 	/* Sticky Header */	
-	if($('.active-sticky-header').length){
-		$window.on('resize', function(){
-			setHeaderHeight();
-		});
+	function handleStickyHeader(){
+		var fromTop = $window.scrollTop();
+		if (fromTop > 20) {
+			$("header.main-header").addClass("is-scrolled");
+			$("header.main-header .header-sticky").addClass("active");
+		} else {
+			$("header.main-header").removeClass("is-scrolled");
+			$("header.main-header .header-sticky").removeClass("active");
+		}
+	}
 
-		function setHeaderHeight(){
-	 		$("header.active-sticky-header").css("height", $('header.active-sticky-header .header-sticky').outerHeight());
-		}	
-	
-		$window.on("scroll", function() {
-			var fromTop = $(window).scrollTop();
-			setHeaderHeight();
-			var headerHeight = $('header.active-sticky-header .header-sticky').outerHeight()
-			$("header.active-sticky-header .header-sticky").toggleClass("hide", (fromTop > headerHeight + 100));
-			$("header.active-sticky-header .header-sticky").toggleClass("active", (fromTop > 600));
-		});
+	if($('header.main-header').length){
+		handleStickyHeader();
+		$window.on("scroll", handleStickyHeader);
+	}	
+
+	/* Hero Background Slideshow */
+	if ($('.hero-bg-slider').length) {
+		var $heroSlides = $('.hero-bg-slide');
+		var $heroIndicators = $('.hero-slider-indicators .indicator');
+		var heroCurrentIndex = 0;
+		var heroSlideCount = $heroSlides.length;
+		var heroSlideTimer = null;
+
+		function switchHeroSlide(targetIdx) {
+			heroCurrentIndex = (targetIdx + heroSlideCount) % heroSlideCount;
+			$heroSlides.removeClass('active').eq(heroCurrentIndex).addClass('active');
+			if ($heroIndicators.length) {
+				$heroIndicators.removeClass('active').eq(heroCurrentIndex).addClass('active');
+			}
+		}
+
+		function startHeroAutoSlide() {
+			stopHeroAutoSlide();
+			heroSlideTimer = setInterval(function() {
+				switchHeroSlide(heroCurrentIndex + 1);
+			}, 5000);
+		}
+
+		function stopHeroAutoSlide() {
+			if (heroSlideTimer) {
+				clearInterval(heroSlideTimer);
+				heroSlideTimer = null;
+			}
+		}
+
+		if ($heroIndicators.length) {
+			$heroIndicators.on('click', function() {
+				var idx = parseInt($(this).data('slide'), 10);
+				switchHeroSlide(idx);
+				startHeroAutoSlide();
+			});
+		}
+
+		startHeroAutoSlide();
 	}	
 	
 	/* Slick Menu JS */
