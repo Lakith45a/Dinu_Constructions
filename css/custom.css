@@ -49,7 +49,7 @@
 
 :root{
 	--primary-color				: #0D0D0D;
-	--secondary-color			: #ccdbe7;
+	--secondary-color			: #bfd5e7;
 	--bg-color					: #FFFFFF;
 	--text-color				: #666666;
 	--accent-color				: #a1cdff;
@@ -764,7 +764,7 @@ header.main-header .header-sticky.active{
 	background-size: cover;
 	background-position: center center;
 	overflow: hidden;
-	padding: 345px 0 200px;
+	padding: 280px 0 160px;
 }
 
 .hero-bg-slider{
