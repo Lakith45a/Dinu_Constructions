@@ -26,6 +26,19 @@
 		$window.on("scroll", handleStickyHeader);
 	}	
 
+	/* Hero Background Video Autoplay */
+	var $heroVideo = $('.hero-bg-video video');
+	if ($heroVideo.length) {
+		var videoEl = $heroVideo[0];
+		videoEl.muted = true;
+		var playPromise = videoEl.play();
+		if (playPromise !== undefined) {
+			playPromise.catch(function(error) {
+				console.log("Autoplay prevented:", error);
+			});
+		}
+	}
+
 	/* Hero Background Slideshow */
 	if ($('.hero-bg-slider').length) {
 		var $heroSlides = $('.hero-bg-slide');
